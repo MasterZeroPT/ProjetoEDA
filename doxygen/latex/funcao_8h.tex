@@ -1,0 +1,236 @@
+\doxysection{Referência ao ficheiro src/funcao.h}
+\hypertarget{funcao_8h}{}\label{funcao_8h}\index{src/funcao.h@{src/funcao.h}}
+{\ttfamily \#include "{}struct.\+h"{}}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{funcao_8h_a1c30175eac338cae6a8adb374c7cde8e}{Ler\+Input}} (char \texorpdfstring{$\ast$}{*}nomeficheiro, \mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista\+Antenas, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matriz\+Out, int \texorpdfstring{$\ast$}{*}linhas\+Out, int \texorpdfstring{$\ast$}{*}colunas\+Out)
+\begin{DoxyCompactList}\small\item\em Lê a entrada de um ficheiro, processa-\/a numa matriz e cria uma lista ligada de antenas. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8h_aff5f29ce1d422bf0a4d34d2092c246cf}{Inserir\+Antena}} (\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista\+Antenas, char frequencia, int linha, int coluna)
+\item 
+void \mbox{\hyperlink{funcao_8h_a3980c39b769e7a240041a88a164648db}{Imprimir\+Antenas}} (\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}lista\+Antenas)
+\begin{DoxyCompactList}\small\item\em Imprime a lista de antenas na consola. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8h_aaffae31356bbc84fe514ee34fd29e06d}{Remover\+Antena}} (\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista\+Antenas, char frequencia, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Remove uma antena da lista de antenas com base na frequência e localização fornecidas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8h_a53083cd48f53590dd64c2b5ae93cccd8}{Inserir\+Efeito\+Nefasto}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matriz, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Insere efeitos nefastos em uma matriz com base no alinhamento de antenas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8h_a44d208dfa91a27519f798ef5dbc044f2}{Imprimir\+Matriz}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matriz, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Imprime uma matriz de caracteres na consola. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8h_ae485626e5bef5744c410d9d258cb9847}{Atualizar\+Lista\+Ligada}} (\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista\+Antenas, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matriz, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Atualiza uma lista ligada de antenas com base em uma matriz de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+\begin{DoxyAuthor}{Autor}
+Pedro Andrade (\href{mailto:a31497@alunos.ipca.pt}{\texttt{ a31497@alunos.\+ipca.\+pt}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versão}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2025-\/03-\/25
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+Definido no ficheiro \mbox{\hyperlink{funcao_8h_source}{funcao.\+h}}.
+
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{funcao_8h_ae485626e5bef5744c410d9d258cb9847}\index{funcao.h@{funcao.h}!AtualizarListaLigada@{AtualizarListaLigada}}
+\index{AtualizarListaLigada@{AtualizarListaLigada}!funcao.h@{funcao.h}}
+\doxysubsubsection{\texorpdfstring{AtualizarListaLigada()}{AtualizarListaLigada()}}
+{\footnotesize\ttfamily \label{funcao_8h_ae485626e5bef5744c410d9d258cb9847} 
+void Atualizar\+Lista\+Ligada (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista\+Antenas}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matriz}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza uma lista ligada de antenas com base em uma matriz de dados. 
+
+Esta função limpa a lista ligada existente de antenas e a atualiza com os dados dos efeitos nefastos fornecidos na matriz da função anterior. Cada célula da matriz pode representar uma antena ou outro tipo de informação relevante para a lista.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista\+Antenas} & Ponteiro para o ponteiro da lista ligada de antenas. A lista será limpa e atualizada pela função. \\
+\hline
+{\em matriz} & Matriz de caracteres contendo os dados para atualizar a lista. \\
+\hline
+{\em linhas} & Número de linhas da matriz. \\
+\hline
+{\em colunas} & Número de colunas da matriz. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha \mbox{\hyperlink{funcao_8c_source_l00309}{309}} do ficheiro \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+\Hypertarget{funcao_8h_a3980c39b769e7a240041a88a164648db}\index{funcao.h@{funcao.h}!ImprimirAntenas@{ImprimirAntenas}}
+\index{ImprimirAntenas@{ImprimirAntenas}!funcao.h@{funcao.h}}
+\doxysubsubsection{\texorpdfstring{ImprimirAntenas()}{ImprimirAntenas()}}
+{\footnotesize\ttfamily \label{funcao_8h_a3980c39b769e7a240041a88a164648db} 
+void Imprimir\+Antenas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}}]{lista\+Antenas}{}\end{DoxyParamCaption})}
+
+
+
+Imprime a lista de antenas na consola. 
+
+Esta função percorre uma lista ligada de antenas e imprime as informações de cada antena, incluindo a frequência e a sua localização (linha e coluna). Caso a lista esteja vazia, uma mensagem informativa será exibida.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista\+Antenas} & Ponteiro para o início da lista ligada de antenas. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha \mbox{\hyperlink{funcao_8c_source_l00169}{169}} do ficheiro \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+\Hypertarget{funcao_8h_a44d208dfa91a27519f798ef5dbc044f2}\index{funcao.h@{funcao.h}!ImprimirMatriz@{ImprimirMatriz}}
+\index{ImprimirMatriz@{ImprimirMatriz}!funcao.h@{funcao.h}}
+\doxysubsubsection{\texorpdfstring{ImprimirMatriz()}{ImprimirMatriz()}}
+{\footnotesize\ttfamily \label{funcao_8h_a44d208dfa91a27519f798ef5dbc044f2} 
+void Imprimir\+Matriz (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matriz}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Imprime uma matriz de caracteres na consola. 
+
+Esta função exibe uma matriz bidimensional de caracteres na consola, formatada com os elementos separados por espaços e cada linha numa nova linha.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em matriz} & Ponteiro para a matriz de caracteres a ser impressa. \\
+\hline
+{\em linhas} & Número de linhas da matriz. \\
+\hline
+{\em colunas} & Número de colunas da matriz. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha \mbox{\hyperlink{funcao_8c_source_l00346}{346}} do ficheiro \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+\Hypertarget{funcao_8h_aff5f29ce1d422bf0a4d34d2092c246cf}\index{funcao.h@{funcao.h}!InserirAntena@{InserirAntena}}
+\index{InserirAntena@{InserirAntena}!funcao.h@{funcao.h}}
+\doxysubsubsection{\texorpdfstring{InserirAntena()}{InserirAntena()}}
+{\footnotesize\ttfamily \label{funcao_8h_aff5f29ce1d422bf0a4d34d2092c246cf} 
+bool Inserir\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista\+Antenas}{, }\item[{char}]{frequencia}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista\+Antenas} & Ponteiro para a lista de antenas onde a nova antena será inserida. \\
+\hline
+{\em frequencia} & Caracter que representa a frequência da antena a ser inserida. \\
+\hline
+{\em linha} & Inteiro que indica a linha onde a antena será posicionada. \\
+\hline
+{\em coluna} & Inteiro que indica a coluna onde a antena será posicionada. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha \mbox{\hyperlink{funcao_8c_source_l00132}{132}} do ficheiro \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+\Hypertarget{funcao_8h_a53083cd48f53590dd64c2b5ae93cccd8}\index{funcao.h@{funcao.h}!InserirEfeitoNefasto@{InserirEfeitoNefasto}}
+\index{InserirEfeitoNefasto@{InserirEfeitoNefasto}!funcao.h@{funcao.h}}
+\doxysubsubsection{\texorpdfstring{InserirEfeitoNefasto()}{InserirEfeitoNefasto()}}
+{\footnotesize\ttfamily \label{funcao_8h_a53083cd48f53590dd64c2b5ae93cccd8} 
+void Inserir\+Efeito\+Nefasto (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matriz}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Insere efeitos nefastos em uma matriz com base no alinhamento de antenas. 
+
+Esta função percorre uma matriz bidimensional e verifica o alinhamento entre antenas (representadas por caracteres diferentes de \textquotesingle{}.\textquotesingle{} e \textquotesingle{}\#\textquotesingle{}). Quando duas antenas com a mesma frequência estão alinhadas horizontalmente, verticalmente ou diagonalmente, e a distância entre elas é par, um efeito nefasto (representado por \textquotesingle{}\#\textquotesingle{}) é inserido na extremidade entre as antenas, desde que esse espaço esteja vazio (representado por \textquotesingle{}.\textquotesingle{}).
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em matriz} & Ponteiro para a matriz bidimensional de caracteres. \\
+\hline
+{\em linhas} & Número de linhas da matriz. \\
+\hline
+{\em colunas} & Número de colunas da matriz. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha \mbox{\hyperlink{funcao_8c_source_l00244}{244}} do ficheiro \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+\Hypertarget{funcao_8h_a1c30175eac338cae6a8adb374c7cde8e}\index{funcao.h@{funcao.h}!LerInput@{LerInput}}
+\index{LerInput@{LerInput}!funcao.h@{funcao.h}}
+\doxysubsubsection{\texorpdfstring{LerInput()}{LerInput()}}
+{\footnotesize\ttfamily \label{funcao_8h_a1c30175eac338cae6a8adb374c7cde8e} 
+bool Ler\+Input (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{nomeficheiro}{, }\item[{\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista\+Antenas}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matriz\+Out}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{linhas\+Out}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{colunas\+Out}{}\end{DoxyParamCaption})}
+
+
+
+Lê a entrada de um ficheiro, processa-\/a numa matriz e cria uma lista ligada de antenas. 
+
+Esta função lê um ficheiro especificado pelo parâmetro {\ttfamily nomeficheiro}, processa o seu conteúdo numa matriz 2D (ignorando espaços) e cria uma lista ligada de antenas com base nos dados da matriz. Cada antena é representada por um caractere na matriz que não seja um \textquotesingle{}.\textquotesingle{} (ponto).
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nomeficheiro} & O nome do ficheiro a ser lido. \\
+\hline
+{\em lista\+Antenas} & Um ponteiro para a cabeça da lista ligada de antenas. Será atualizado com a lista criada. \\
+\hline
+{\em matriz\+Out} & Um ponteiro para a matriz 2D que será criada e preenchida com os dados do ficheiro. \\
+\hline
+{\em linhas\+Out} & Um ponteiro para um inteiro que armazenará o número de linhas da matriz. \\
+\hline
+{\em colunas\+Out} & Um ponteiro para um inteiro que armazenará o número de colunas da matriz.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se o ficheiro foi lido e processado com sucesso, {\ttfamily false} caso contrário.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+O chamador é responsável por liberar a memória alocada para a matriz e a lista ligada de antenas.
+\end{DoxyNote}
+\begin{DoxyWarning}{Aviso}
+Certifique-\/se de que o ficheiro existe e está acessível. Falhas na alocação de memória resultarão em uma mensagem de erro e a função retornará {\ttfamily false}. 
+\end{DoxyWarning}
+
+
+Definido na linha \mbox{\hyperlink{funcao_8c_source_l00034}{34}} do ficheiro \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+
+\Hypertarget{funcao_8h_aaffae31356bbc84fe514ee34fd29e06d}\index{funcao.h@{funcao.h}!RemoverAntena@{RemoverAntena}}
+\index{RemoverAntena@{RemoverAntena}!funcao.h@{funcao.h}}
+\doxysubsubsection{\texorpdfstring{RemoverAntena()}{RemoverAntena()}}
+{\footnotesize\ttfamily \label{funcao_8h_aaffae31356bbc84fe514ee34fd29e06d} 
+bool Remover\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista\+Antenas}{, }\item[{char}]{frequencia}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Remove uma antena da lista de antenas com base na frequência e localização fornecidas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista\+Antenas} & Ponteiro para o ponteiro da lista de antenas. \\
+\hline
+{\em frequencia} & Caracter que representa a frequência da antena a ser removida. \\
+\hline
+{\em linha} & Inteiro que representa a linha da localização da antena. \\
+\hline
+{\em coluna} & Inteiro que representa a coluna da localização da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se a antena foi encontrada e removida com sucesso. 
+
+false Se a antena não foi encontrada ou a lista de antenas está vazia.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+A função libera a memória alocada para a antena removida. 
+
+Caso a lista esteja vazia, uma mensagem será exibida no console. 
+
+Caso a antena não seja encontrada, uma mensagem será exibida no console. 
+\end{DoxyNote}
+
+
+Definido na linha \mbox{\hyperlink{funcao_8c_source_l00198}{198}} do ficheiro \mbox{\hyperlink{funcao_8c_source}{funcao.\+c}}.
+

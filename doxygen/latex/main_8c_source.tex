@@ -1,0 +1,69 @@
+\doxysection{main.\+c}
+\hypertarget{main_8c_source}{}\label{main_8c_source}\index{src/main.c@{src/main.c}}
+\mbox{\hyperlink{main_8c}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{funcao_8h}{funcao.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00015}\mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00015}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00017}00017\ \mbox{\hyperlink{struct_antena}{Antena}}*\ listaAntenas\ =\ NULL;\ \textcolor{comment}{//\ Declare\ listaAntenas\ before\ calling\ LerInput}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00018}00018\ \textcolor{keywordtype}{char}**\ matriz\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00019}00019\ \textcolor{keywordtype}{int}\ linhas\ =\ 0,\ colunas\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00020}00020\ \mbox{\hyperlink{funcao_8c_a1c30175eac338cae6a8adb374c7cde8e}{LerInput}}(\textcolor{stringliteral}{"{}./src/exemplo.txt"{}},\ \&listaAntenas,\ \&matriz,\ \&linhas,\ \&colunas);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00022}00022\ \textcolor{comment}{//\ Inserir\ algumas\ antenas\ manualmente}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00023}00023\ \textcolor{comment}{//InserirAntena(\&listaAntenas,\ 'A',\ 0,\ 0);}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00024}00024\ \textcolor{comment}{//InserirAntena(\&listaAntenas,\ 'B',\ 1,\ 2);}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00025}00025\ \textcolor{comment}{//InserirAntena(\&listaAntenas,\ 'C',\ 2,\ 4);}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00026}00026\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00028}00028\ \textcolor{comment}{//\ Imprimir\ a\ lista\ de\ antenas}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00029}00029\ \textcolor{comment}{//ImprimirAntenas(listaAntenas);}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00030}00030\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00032}00032\ \textcolor{comment}{//\ Remover\ uma\ antena}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00033}00033\ \mbox{\hyperlink{funcao_8c_aaffae31356bbc84fe514ee34fd29e06d}{RemoverAntena}}(\&listaAntenas,\ \textcolor{charliteral}{'A'},\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00034}00034\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00036}00036\ \textcolor{comment}{//ImprimirAntenas(listaAntenas);}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00037}00037\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00039}00039\ \textcolor{comment}{//\ Aplicar\ o\ efeito\ nefasto\ na\ matriz}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00040}00040\ \mbox{\hyperlink{funcao_8c_a53083cd48f53590dd64c2b5ae93cccd8}{InserirEfeitoNefasto}}(matriz,\ linhas,\ colunas);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00042}00042\ \textcolor{comment}{//\ Atualizar\ a\ lista\ ligada\ com\ base\ na\ matriz\ da\ função\ InserirEfeitoNefasto}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00043}00043\ \mbox{\hyperlink{funcao_8c_ae485626e5bef5744c410d9d258cb9847}{AtualizarListaLigada}}(\&listaAntenas,\ matriz,\ linhas,\ colunas);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00045}00045\ \textcolor{comment}{//\ Imprimir\ a\ matriz\ final}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00046}00046\ \mbox{\hyperlink{funcao_8c_a44d208dfa91a27519f798ef5dbc044f2}{ImprimirMatriz}}(matriz,\ 12,\ 12);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00047}00047\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00049}00049\ \textcolor{comment}{//\ Liberar\ memória\ da\ lista\ de\ antenas}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00050}00050\ \textcolor{keywordflow}{while}\ (listaAntenas)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{struct_antena}{Antena}}*\ temp\ =\ listaAntenas;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00052}00052\ \ \ \ \ listaAntenas\ =\ listaAntenas-\/>\mbox{\hyperlink{struct_antena_a2445401110cc1511b3c365fcf442a67d}{proximo}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00053}00053\ \ \ \ \ free(temp);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00056}00056\ \textcolor{comment}{//\ Liberar\ memória\ da\ lista\ de\ efeitos\ nefastos}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00057}00057\ \mbox{\hyperlink{struct_efeito_nefasto}{EfeitoNefasto}}*\ listaEfeitos\ =\ NULL;\ \textcolor{comment}{//\ Declare\ and\ initialize\ the\ list\ of\ effects}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00058}00058\ \textcolor{keywordflow}{while}\ (listaEfeitos)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{struct_efeito_nefasto}{EfeitoNefasto}}*\ temp\ =\ listaEfeitos;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00060}00060\ \ \ \ \ listaEfeitos\ =\ listaEfeitos-\/>\mbox{\hyperlink{struct_efeito_nefasto_a1bc9b619fd71349d20cafc9e9b689a44}{proximo}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00061}00061\ \ \ \ \ free(temp);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00064}00064\ \textcolor{comment}{//\ Liberar\ memória\ da\ matriz}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00065}00065\ \textcolor{keywordflow}{if}\ (matriz)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ linhas;\ i++)\ \{\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ free(matriz[i]);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00069}00069\ \ \ \ \ free(matriz);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00072}00072\ \}}
+
+\end{DoxyCode}

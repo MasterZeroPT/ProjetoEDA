@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto de EDA - Antenas: Código-Fonte de src/funcao.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projeto de EDA - Antenas<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Uma matriz com antenas com diferentes frequências. Processar possiveis &quot;efeitos nefastos&quot; com a acumulação de antenas da mesma frequência.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('funcao_8c_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">funcao.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="funcao_8c.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor"> #include &quot;<a class="code" href="funcao_8h.html">funcao.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="funcao_8c.html#a1c30175eac338cae6a8adb374c7cde8e">   34</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="funcao_8c.html#a1c30175eac338cae6a8adb374c7cde8e">LerInput</a>(<span class="keywordtype">char</span>* nomeficheiro, <a class="code hl_struct" href="struct_antena.html">Antena</a>** listaAntenas, <span class="keywordtype">char</span>*** matrizOut, <span class="keywordtype">int</span>* linhasOut, <span class="keywordtype">int</span>* colunasOut) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    FILE* fp = fopen(nomeficheiro, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (fp == NULL) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        printf(<span class="stringliteral">&quot;Erro ao abrir o ficheiro %s&quot;</span>, nomeficheiro);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">int</span> linhas = 0, capacidadeLinhas = 50;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> colunas = 0;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">char</span>** matriz = malloc(capacidadeLinhas * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>*)); <span class="comment">// aloca um array de apontadores</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (!matriz) { <span class="comment">//verificar se o malloc da matriz funcionou</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        printf(<span class="stringliteral">&quot;Erro ao alocar memória para a matriz.\n&quot;</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        fclose(fp);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    *listaAntenas = NULL; <span class="comment">//inicializar a lista ligada</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">char</span>* linha = malloc(256 * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>)); <span class="comment">// buffer para temporariamente armazenar cada linha do ficheiro</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (!linha) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        printf(<span class="stringliteral">&quot;Erro ao alocar memória para o buffer da linha.\n&quot;</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        fclose(fp);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        free(matriz);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">while</span> (fgets(linha, 256, fp)) { <span class="comment">// Lê uma linha do ficheiro apontado por &#39;fp&#39; e armazena no buffer &#39;linha&#39;.</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">if</span> (linhas &gt;= capacidadeLinhas) { <span class="comment">// verifica se a memória alocada é suficiente e realoca para uma memória maior se não for.</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            capacidadeLinhas *= 2; <span class="comment">// duplica o tamanho da capacidade de linhas</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            matriz = realloc(matriz, capacidadeLinhas * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>*));</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">if</span> (!matriz) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                printf(<span class="stringliteral">&quot;Erro ao realocar memória.\n&quot;</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                free(linha);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                fclose(fp);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="comment">// Conta o número de colunas ignorando os espaços</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; linha[i] != <span class="charliteral">&#39;\0&#39;</span>; i++) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">if</span> (linha[i] != <span class="charliteral">&#39; &#39;</span> &amp;&amp; linha[i] != <span class="charliteral">&#39;\n&#39;</span>) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                colunas++;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="comment">// Aloca memória para a linha atual</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        matriz[linhas] = malloc((colunas + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>)); <span class="comment">// &quot;+1&quot; para garantir espaço para o &quot;\0&quot; na memória</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">if</span> (!matriz[linhas]) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            printf(<span class="stringliteral">&quot;Erro ao alocar memória para a linha %d.\n&quot;</span>, linhas);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            free(linha);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            fclose(fp);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="comment">// Preenche a linha da matriz ignorando os espaços</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordtype">int</span> colunaAtual = 0;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; linha[i] != <span class="charliteral">&#39;\0&#39;</span>; i++) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">if</span> (linha[i] != <span class="charliteral">&#39; &#39;</span> &amp;&amp; linha[i] != <span class="charliteral">&#39;\n&#39;</span>) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                matriz[linhas][colunaAtual++] = linha[i]; <span class="comment">// Constroi a matriz de forma organizada sem espaços</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        matriz[linhas][colunaAtual] = <span class="charliteral">&#39;\0&#39;</span>; <span class="comment">// Adiciona o fim da string</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="comment">// Processa os caracteres da linha para criar a lista ligada de antenas</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> coluna = 0; coluna &lt; colunas; coluna++) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">if</span> (matriz[linhas][coluna] != <span class="charliteral">&#39;.&#39;</span>) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                <a class="code hl_struct" href="struct_antena.html">Antena</a>* novaAntena = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_antena.html">Antena</a>)); <span class="comment">// Verifica se a posição especificada na matriz não está vazia (&#39;.&#39;). Se a posição estiver ocupada, aloca memória para uma nova estrutura Antena.</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordflow">if</span> (!novaAntena) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    printf(<span class="stringliteral">&quot;Erro ao alocar memória para a antena.\n&quot;</span>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                    free(linha);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                    fclose(fp);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#a643fe33fe56ce4c44a24d28a121d5d23">frequencia</a> = matriz[linhas][coluna];</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#abf58b3ecd69f16bb6cc76508b1bc88a9">localizacao</a>.<a class="code hl_variable" href="struct_coordenada.html#af20d02e678ba0aeaf8727d747151baf0">linha</a> = linhas;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#abf58b3ecd69f16bb6cc76508b1bc88a9">localizacao</a>.<a class="code hl_variable" href="struct_coordenada.html#a4a2f44649af1dfbf8d13141d5a336455">coluna</a> = coluna;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#a2445401110cc1511b3c365fcf442a67d">proximo</a> = *listaAntenas;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                *listaAntenas = novaAntena;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        linhas++;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    free(linha); <span class="comment">// Liberta o buffer da linha</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    fclose(fp);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">// Retorna os resultados </span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    *matrizOut = matriz;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    *linhasOut = linhas;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    *colunasOut = colunas;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="funcao_8c.html#aff5f29ce1d422bf0a4d34d2092c246cf">  132</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="funcao_8c.html#aff5f29ce1d422bf0a4d34d2092c246cf">InserirAntena</a>(<a class="code hl_struct" href="struct_antena.html">Antena</a>** listaAntenas, <span class="keywordtype">char</span> frequencia, <span class="keywordtype">int</span> linha, <span class="keywordtype">int</span> coluna) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="comment">// Verifica se já existe uma antena na mesma coordenada</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="struct_antena.html">Antena</a>* atual = *listaAntenas; atual; atual = atual-&gt;<a class="code hl_variable" href="struct_antena.html#a2445401110cc1511b3c365fcf442a67d">proximo</a>) { <span class="comment">// &quot;; atual;&quot; o loop continua enquanto a variável não for nula (NULL)</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordflow">if</span> (atual-&gt;localizacao.linha == linha &amp;&amp; atual-&gt;localizacao.coluna == coluna) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <span class="comment">//printf(&quot;Já existe uma antena na posição (%d, %d).\n&quot;, linha, coluna); //está com bugs</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">// Cria uma nova antena</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <a class="code hl_struct" href="struct_antena.html">Antena</a>* novaAntena = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_antena.html">Antena</a>));</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">if</span> (!novaAntena) {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        printf(<span class="stringliteral">&quot;Erro ao alocar memória para a nova antena.\n&quot;</span>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#a643fe33fe56ce4c44a24d28a121d5d23">frequencia</a> = frequencia;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#abf58b3ecd69f16bb6cc76508b1bc88a9">localizacao</a>.<a class="code hl_variable" href="struct_coordenada.html#af20d02e678ba0aeaf8727d747151baf0">linha</a> = linha;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#abf58b3ecd69f16bb6cc76508b1bc88a9">localizacao</a>.<a class="code hl_variable" href="struct_coordenada.html#a4a2f44649af1dfbf8d13141d5a336455">coluna</a> = coluna;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#a2445401110cc1511b3c365fcf442a67d">proximo</a> = *listaAntenas;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    *listaAntenas = novaAntena;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="comment">// Libera a memória da antena criada, caso necessário</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
+</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span></div>
+<div class="foldopen" id="foldopen00169" data-start="{" data-end="}">
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="funcao_8c.html#a3980c39b769e7a240041a88a164648db">  169</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="funcao_8c.html#a3980c39b769e7a240041a88a164648db">ImprimirAntenas</a>(<a class="code hl_struct" href="struct_antena.html">Antena</a>* listaAntenas) {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">if</span> (!listaAntenas) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        printf(<span class="stringliteral">&quot;A lista de antenas está vazia.\n&quot;</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    printf(<span class="stringliteral">&quot;Lista de Antenas:\n&quot;</span>);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="struct_antena.html">Antena</a>* atual = listaAntenas; atual; atual = atual-&gt;<a class="code hl_variable" href="struct_antena.html#a2445401110cc1511b3c365fcf442a67d">proximo</a>) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        printf(<span class="stringliteral">&quot;Antena: %c na posição (%d, %d)\n&quot;</span>, </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>               atual-&gt;frequencia, </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>               atual-&gt;localizacao.linha, </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>               atual-&gt;localizacao.coluna);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>}</div>
+</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span></div>
+<div class="foldopen" id="foldopen00198" data-start="{" data-end="}">
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="funcao_8c.html#aaffae31356bbc84fe514ee34fd29e06d">  198</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="funcao_8c.html#aaffae31356bbc84fe514ee34fd29e06d">RemoverAntena</a>(<a class="code hl_struct" href="struct_antena.html">Antena</a>** listaAntenas, <span class="keywordtype">char</span> frequencia, <span class="keywordtype">int</span> linha, <span class="keywordtype">int</span> coluna) {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">if</span> (!*listaAntenas) {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        printf(<span class="stringliteral">&quot;A lista de antenas está vazia.\n&quot;</span>);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <a class="code hl_struct" href="struct_antena.html">Antena</a>* atual = *listaAntenas;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <a class="code hl_struct" href="struct_antena.html">Antena</a>* anterior = NULL;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">while</span> (atual) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">if</span> (atual-&gt;<a class="code hl_variable" href="struct_antena.html#a643fe33fe56ce4c44a24d28a121d5d23">frequencia</a> == frequencia &amp;&amp;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            atual-&gt;<a class="code hl_variable" href="struct_antena.html#abf58b3ecd69f16bb6cc76508b1bc88a9">localizacao</a>.<a class="code hl_variable" href="struct_coordenada.html#af20d02e678ba0aeaf8727d747151baf0">linha</a> == linha &amp;&amp;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            atual-&gt;<a class="code hl_variable" href="struct_antena.html#abf58b3ecd69f16bb6cc76508b1bc88a9">localizacao</a>.<a class="code hl_variable" href="struct_coordenada.html#a4a2f44649af1dfbf8d13141d5a336455">coluna</a> == coluna) {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <span class="keywordflow">if</span> (anterior) {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                anterior-&gt;<a class="code hl_variable" href="struct_antena.html#a2445401110cc1511b3c365fcf442a67d">proximo</a> = atual-&gt;<a class="code hl_variable" href="struct_antena.html#a2445401110cc1511b3c365fcf442a67d">proximo</a>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                *listaAntenas = atual-&gt;<a class="code hl_variable" href="struct_antena.html#a2445401110cc1511b3c365fcf442a67d">proximo</a>;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            }</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            free(atual);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            printf(<span class="stringliteral">&quot;Antena %c na posição (%d, %d) removida com sucesso.\n&quot;</span>, frequencia, linha, coluna);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        }</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        anterior = atual;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        atual = atual-&gt;<a class="code hl_variable" href="struct_antena.html#a2445401110cc1511b3c365fcf442a67d">proximo</a>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    printf(<span class="stringliteral">&quot;Antena %c na posição (%d, %d) não encontrada.\n&quot;</span>, frequencia, linha, coluna);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>}</div>
+</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span></div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="funcao_8c.html#a53083cd48f53590dd64c2b5ae93cccd8">  244</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="funcao_8c.html#a53083cd48f53590dd64c2b5ae93cccd8">InserirEfeitoNefasto</a>(<span class="keywordtype">char</span>** matriz, <span class="keywordtype">int</span> linhas, <span class="keywordtype">int</span> colunas) {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="comment">// Iterar sobre todas as células da matriz</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> linha1 = 0; linha1 &lt; linhas; linha1++) {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> coluna1 = 0; coluna1 &lt; colunas; coluna1++) {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            <span class="keywordtype">char</span> antena1 = matriz[linha1][coluna1];</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <span class="keywordflow">if</span> (antena1 == <span class="charliteral">&#39;.&#39;</span> || antena1 == <span class="charliteral">&#39;#&#39;</span>) <span class="keywordflow">continue</span>; <span class="comment">// Ignorar espaços livres e efeitos já aplicados</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            <span class="comment">// Verificar alinhamento com outras antenas</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> linha2 = 0; linha2 &lt; linhas; linha2++) {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> coluna2 = 0; coluna2 &lt; colunas; coluna2++) {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                    <span class="keywordtype">char</span> antena2 = matriz[linha2][coluna2];</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                    <span class="keywordflow">if</span> (antena2 == <span class="charliteral">&#39;.&#39;</span> || antena2 == <span class="charliteral">&#39;#&#39;</span> || (linha1 == linha2 &amp;&amp; coluna1 == coluna2)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                    <span class="comment">// Verificar se as antenas têm a mesma frequência</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                    <span class="keywordflow">if</span> (antena1 == antena2) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                        <span class="comment">// Verificar alinhamento horizontal, vertical ou diagonal</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                        <span class="keywordflow">if</span> (linha1 == linha2 || coluna1 == coluna2 || abs(linha1 - linha2) == abs(coluna1 - coluna2)) {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                            <span class="comment">// Calcular incrementos para linha e coluna</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                            <span class="keywordtype">int</span> incLinha = (linha1 == linha2) ? 0 : (linha2 &gt; linha1 ? 1 : -1);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                            <span class="keywordtype">int</span> incColuna = (coluna1 == coluna2) ? 0 : (coluna2 &gt; coluna1 ? 1 : -1);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                            <span class="comment">// Calcular a distância total</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                            <span class="keywordtype">int</span> distancia = (linha1 == linha2) ? abs(coluna2 - coluna1) : abs(linha2 - linha1);</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                            <span class="comment">// Verificar se a distância é par (para aplicar o efeito nas extremidades)</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                            <span class="keywordflow">if</span> (distancia % 2 == 0) {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                                <span class="comment">// Calcular as extremidades</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                                <span class="keywordtype">int</span> linhaEfeito1 = linha1 + incLinha;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                                <span class="keywordtype">int</span> colunaEfeito1 = coluna1 + incColuna;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                                <span class="keywordtype">int</span> linhaEfeito2 = linha2 - incLinha;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                                <span class="keywordtype">int</span> colunaEfeito2 = coluna2 - incColuna;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                                <span class="comment">// Verificar se as extremidades estão dentro dos limites da matriz e são espaços livres</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                                <span class="keywordflow">if</span> (linhaEfeito1 &gt;= 0 &amp;&amp; linhaEfeito1 &lt; linhas &amp;&amp;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                                    colunaEfeito1 &gt;= 0 &amp;&amp; colunaEfeito1 &lt; colunas &amp;&amp;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                                    matriz[linhaEfeito1][colunaEfeito1] == <span class="charliteral">&#39;.&#39;</span>) {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                                    matriz[linhaEfeito1][colunaEfeito1] = <span class="charliteral">&#39;#&#39;</span>;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                                }</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                                <span class="keywordflow">if</span> (linhaEfeito2 &gt;= 0 &amp;&amp; linhaEfeito2 &lt; linhas &amp;&amp;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                                    colunaEfeito2 &gt;= 0 &amp;&amp; colunaEfeito2 &lt; colunas &amp;&amp;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                                    matriz[linhaEfeito2][colunaEfeito2] == <span class="charliteral">&#39;.&#39;</span>) {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                                    matriz[linhaEfeito2][colunaEfeito2] = <span class="charliteral">&#39;#&#39;</span>;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                                }</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                            }</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                        }</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                    }</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                }</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>            }</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        }</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>}</div>
+</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span></div>
+<div class="foldopen" id="foldopen00309" data-start="{" data-end="}">
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno"><a class="line" href="funcao_8c.html#ae485626e5bef5744c410d9d258cb9847">  309</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="funcao_8c.html#ae485626e5bef5744c410d9d258cb9847">AtualizarListaLigada</a>(<a class="code hl_struct" href="struct_antena.html">Antena</a>** listaAntenas, <span class="keywordtype">char</span>** matriz, <span class="keywordtype">int</span> linhas, <span class="keywordtype">int</span> colunas) {</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="comment">// Limpar a lista ligada existente</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keywordflow">while</span> (*listaAntenas) {</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        <a class="code hl_struct" href="struct_antena.html">Antena</a>* temp = *listaAntenas;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        *listaAntenas = (*listaAntenas)-&gt;<a class="code hl_variable" href="struct_antena.html#a2445401110cc1511b3c365fcf442a67d">proximo</a>;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        free(temp);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    }</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    <span class="comment">// Criar uma nova lista ligada com base na matriz</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; linhas; i++) {</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; colunas; j++) {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            <span class="keywordflow">if</span> (matriz[i][j] != <span class="charliteral">&#39;.&#39;</span> &amp;&amp; matriz[i][j] != <span class="charliteral">&#39;#&#39;</span>) { <span class="comment">// Apenas antenas originais</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>                <a class="code hl_struct" href="struct_antena.html">Antena</a>* novaAntena = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_antena.html">Antena</a>));</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                <span class="keywordflow">if</span> (!novaAntena) {</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>                    printf(<span class="stringliteral">&quot;Erro ao alocar memória para a antena.\n&quot;</span>);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>                }</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#a643fe33fe56ce4c44a24d28a121d5d23">frequencia</a> = matriz[i][j];</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#abf58b3ecd69f16bb6cc76508b1bc88a9">localizacao</a>.<a class="code hl_variable" href="struct_coordenada.html#af20d02e678ba0aeaf8727d747151baf0">linha</a> = i;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>                novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#abf58b3ecd69f16bb6cc76508b1bc88a9">localizacao</a>.<a class="code hl_variable" href="struct_coordenada.html#a4a2f44649af1dfbf8d13141d5a336455">coluna</a> = j;</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                novaAntena-&gt;<a class="code hl_variable" href="struct_antena.html#a2445401110cc1511b3c365fcf442a67d">proximo</a> = *listaAntenas;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                *listaAntenas = novaAntena;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>            }</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        }</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    }</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>}</div>
+</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span></div>
+<div class="foldopen" id="foldopen00346" data-start="{" data-end="}">
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno"><a class="line" href="funcao_8c.html#a44d208dfa91a27519f798ef5dbc044f2">  346</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="funcao_8c.html#a44d208dfa91a27519f798ef5dbc044f2">ImprimirMatriz</a>(<span class="keywordtype">char</span>** matriz, <span class="keywordtype">int</span> linhas, <span class="keywordtype">int</span> colunas) {</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    printf(<span class="stringliteral">&quot;\nMatriz atual:\n&quot;</span>);</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; linhas; i++) {</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; colunas; j++) {</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>            printf(<span class="stringliteral">&quot;%c &quot;</span>, matriz[i][j]);</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        }</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    }</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>}</div>
+</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
+<div class="ttc" id="afuncao_8c_html_a1c30175eac338cae6a8adb374c7cde8e"><div class="ttname"><a href="funcao_8c.html#a1c30175eac338cae6a8adb374c7cde8e">LerInput</a></div><div class="ttdeci">bool LerInput(char *nomeficheiro, Antena **listaAntenas, char ***matrizOut, int *linhasOut, int *colunasOut)</div><div class="ttdoc">Lê a entrada de um ficheiro, processa-a numa matriz e cria uma lista ligada de antenas.</div><div class="ttdef"><b>Definição</b> <a href="#l00034">funcao.c:34</a></div></div>
+<div class="ttc" id="afuncao_8c_html_a3980c39b769e7a240041a88a164648db"><div class="ttname"><a href="funcao_8c.html#a3980c39b769e7a240041a88a164648db">ImprimirAntenas</a></div><div class="ttdeci">void ImprimirAntenas(Antena *listaAntenas)</div><div class="ttdoc">Imprime a lista de antenas na consola.</div><div class="ttdef"><b>Definição</b> <a href="#l00169">funcao.c:169</a></div></div>
+<div class="ttc" id="afuncao_8c_html_a44d208dfa91a27519f798ef5dbc044f2"><div class="ttname"><a href="funcao_8c.html#a44d208dfa91a27519f798ef5dbc044f2">ImprimirMatriz</a></div><div class="ttdeci">void ImprimirMatriz(char **matriz, int linhas, int colunas)</div><div class="ttdoc">Imprime uma matriz de caracteres na consola.</div><div class="ttdef"><b>Definição</b> <a href="#l00346">funcao.c:346</a></div></div>
+<div class="ttc" id="afuncao_8c_html_a53083cd48f53590dd64c2b5ae93cccd8"><div class="ttname"><a href="funcao_8c.html#a53083cd48f53590dd64c2b5ae93cccd8">InserirEfeitoNefasto</a></div><div class="ttdeci">void InserirEfeitoNefasto(char **matriz, int linhas, int colunas)</div><div class="ttdoc">Insere efeitos nefastos em uma matriz com base no alinhamento de antenas.</div><div class="ttdef"><b>Definição</b> <a href="#l00244">funcao.c:244</a></div></div>
+<div class="ttc" id="afuncao_8c_html_aaffae31356bbc84fe514ee34fd29e06d"><div class="ttname"><a href="funcao_8c.html#aaffae31356bbc84fe514ee34fd29e06d">RemoverAntena</a></div><div class="ttdeci">bool RemoverAntena(Antena **listaAntenas, char frequencia, int linha, int coluna)</div><div class="ttdoc">Remove uma antena da lista de antenas com base na frequência e localização fornecidas.</div><div class="ttdef"><b>Definição</b> <a href="#l00198">funcao.c:198</a></div></div>
+<div class="ttc" id="afuncao_8c_html_ae485626e5bef5744c410d9d258cb9847"><div class="ttname"><a href="funcao_8c.html#ae485626e5bef5744c410d9d258cb9847">AtualizarListaLigada</a></div><div class="ttdeci">void AtualizarListaLigada(Antena **listaAntenas, char **matriz, int linhas, int colunas)</div><div class="ttdoc">Atualiza uma lista ligada de antenas com base em uma matriz de dados.</div><div class="ttdef"><b>Definição</b> <a href="#l00309">funcao.c:309</a></div></div>
+<div class="ttc" id="afuncao_8c_html_aff5f29ce1d422bf0a4d34d2092c246cf"><div class="ttname"><a href="funcao_8c.html#aff5f29ce1d422bf0a4d34d2092c246cf">InserirAntena</a></div><div class="ttdeci">bool InserirAntena(Antena **listaAntenas, char frequencia, int linha, int coluna)</div><div class="ttdef"><b>Definição</b> <a href="#l00132">funcao.c:132</a></div></div>
+<div class="ttc" id="afuncao_8h_html"><div class="ttname"><a href="funcao_8h.html">funcao.h</a></div></div>
+<div class="ttc" id="astruct_antena_html"><div class="ttname"><a href="struct_antena.html">Antena</a></div><div class="ttdef"><b>Definição</b> <a href="struct_8h_source.html#l00024">struct.h:24</a></div></div>
+<div class="ttc" id="astruct_antena_html_a2445401110cc1511b3c365fcf442a67d"><div class="ttname"><a href="struct_antena.html#a2445401110cc1511b3c365fcf442a67d">Antena::proximo</a></div><div class="ttdeci">struct Antena * proximo</div><div class="ttdef"><b>Definição</b> <a href="struct_8h_source.html#l00027">struct.h:27</a></div></div>
+<div class="ttc" id="astruct_antena_html_a643fe33fe56ce4c44a24d28a121d5d23"><div class="ttname"><a href="struct_antena.html#a643fe33fe56ce4c44a24d28a121d5d23">Antena::frequencia</a></div><div class="ttdeci">char frequencia</div><div class="ttdef"><b>Definição</b> <a href="struct_8h_source.html#l00025">struct.h:25</a></div></div>
+<div class="ttc" id="astruct_antena_html_abf58b3ecd69f16bb6cc76508b1bc88a9"><div class="ttname"><a href="struct_antena.html#abf58b3ecd69f16bb6cc76508b1bc88a9">Antena::localizacao</a></div><div class="ttdeci">Coordenada localizacao</div><div class="ttdef"><b>Definição</b> <a href="struct_8h_source.html#l00026">struct.h:26</a></div></div>
+<div class="ttc" id="astruct_coordenada_html_a4a2f44649af1dfbf8d13141d5a336455"><div class="ttname"><a href="struct_coordenada.html#a4a2f44649af1dfbf8d13141d5a336455">Coordenada::coluna</a></div><div class="ttdeci">int coluna</div><div class="ttdef"><b>Definição</b> <a href="struct_8h_source.html#l00020">struct.h:20</a></div></div>
+<div class="ttc" id="astruct_coordenada_html_af20d02e678ba0aeaf8727d747151baf0"><div class="ttname"><a href="struct_coordenada.html#af20d02e678ba0aeaf8727d747151baf0">Coordenada::linha</a></div><div class="ttdeci">int linha</div><div class="ttdef"><b>Definição</b> <a href="struct_8h_source.html#l00019">struct.h:19</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="funcao_8c.html">funcao.c</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
