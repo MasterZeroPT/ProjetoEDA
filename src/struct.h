@@ -32,3 +32,20 @@ typedef struct EfeitoNefasto {
     Coordenada localizacao;
     struct EfeitoNefasto* proximo;
 } EfeitoNefasto;
+
+// Célula da matriz
+typedef struct CelulaMatriz {
+    Coordenada pos;
+    char valor;
+    struct CelulaMatriz* prox;
+} CelulaMatriz;
+
+typedef struct {
+    CelulaMatriz* matriz;
+    Antena* antenas;
+} MatrizAntenas;  // Para devolver a matriz e antenas juntas
+
+typedef struct {
+    Antena* lista;
+    CelulaMatriz* matriz;
+} ResultadoRemocao;  // Para devolver a lista e a matriz após a remoção

@@ -11,10 +11,9 @@
 #pragma once
 #include "struct.h"
 
-bool LerInput(char* nomeficheiro, Antena** listaAntenas, char*** matrizOut, int* linhasOut, int* colunasOut);
-bool InserirAntena(Antena** listaAntenas, char frequencia, int linha, int coluna);
-void ImprimirAntenas(Antena* listaAntenas);
-bool RemoverAntena(Antena** listaAntenas, char frequencia, int linha, int coluna);
-void InserirEfeitoNefasto(char** matriz, int linhas, int colunas);
-void ImprimirMatriz(char** matriz, int linhas, int colunas);
-void AtualizarListaLigada(Antena** listaAntenas, char** matriz, int linhas, int colunas);
+MatrizAntenas LerInput(char* nomeFicheiro);  
+Antena* InserirAntena(Antena* lista, char freq, int linha, int coluna);  
+ResultadoRemocao RemoverAntena(Antena* lista, CelulaMatriz* matriz, int linha, int coluna);  
+Antena* AtualizarListaAntenas(CelulaMatriz* matriz);
+void ImprimirMatriz(CelulaMatriz* matriz);
+CelulaMatriz* AdicionarCelula(CelulaMatriz* matriz, int linha, int coluna, char valor);

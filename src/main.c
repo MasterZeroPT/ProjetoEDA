@@ -12,61 +12,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
+int main() {
+    // LerInput devolve a matriz e antenas juntas
+    MatrizAntenas resultado = LerInput("./src/exemplo.txt");
+    CelulaMatriz* matriz = resultado.matriz;
+    Antena* listaAntenas = resultado.antenas;
 
-Antena* listaAntenas = NULL; // Declare listaAntenas before calling LerInput
-char** matriz = NULL;
-int linhas = 0, colunas = 0;
-LerInput("./src/exemplo.txt", &listaAntenas, &matriz, &linhas, &colunas);
+    // InserirAntena devolve a nova lista
+    listaAntenas = InserirAntena(listaAntenas, 'A', 0, 0);
+    matriz = AdicionarCelula(matriz, 0, 0, 'A');  // Atualiza a matriz separadamente
 
-// Inserir algumas antenas manualmente
-//InserirAntena(&listaAntenas, 'A', 0, 0);
-//InserirAntena(&listaAntenas, 'B', 1, 2);
-//InserirAntena(&listaAntenas, 'C', 2, 4);
-printf("\n");
+    listaAntenas = InserirAntena(listaAntenas, 'B', 1, 2);
+    matriz = AdicionarCelula(matriz, 1, 2, 'B');
 
-// Imprimir a lista de antenas
-//ImprimirAntenas(listaAntenas);
-printf("\n");
+    listaAntenas = InserirAntena(listaAntenas, 'C', 2, 4);
+    matriz = AdicionarCelula(matriz, 2, 4, 'C');
 
-// Remover uma antena
-RemoverAntena(&listaAntenas, 'A', 0, 0);
-printf("\n");
+    // RemoverAntena devolve a lista e matriz atualizadas
+    ResultadoRemocao res = RemoverAntena(listaAntenas, matriz, 0, 0);
+    listaAntenas = res.lista;
+    matriz = res.matriz;
 
-//ImprimirAntenas(listaAntenas);
-printf("\n");
+    matriz = InserirEfeitoNefasto(matriz);
+    listaAntenas = AtualizarListaAntenas(matriz);
 
-// Aplicar o efeito nefasto na matriz
-InserirEfeitoNefasto(matriz, linhas, colunas);
+    ImprimirMatriz(matriz);
 
-// Atualizar a lista ligada com base na matriz da função InserirEfeitoNefasto
-AtualizarListaLigada(&listaAntenas, matriz, linhas, colunas);
-
-// Imprimir a matriz final
-ImprimirMatriz(matriz, 12, 12);
-printf("\n");
-
-// Liberar memória da lista de antenas
-while (listaAntenas) {
-    Antena* temp = listaAntenas;
-    listaAntenas = listaAntenas->proximo;
-    free(temp);
-}
-
-// Liberar memória da lista de efeitos nefastos
-EfeitoNefasto* listaEfeitos = NULL; // Declare and initialize the list of effects
-while (listaEfeitos) {
-    EfeitoNefasto* temp = listaEfeitos;
-    listaEfeitos = listaEfeitos->proximo;
-    free(temp);
-}
-
-// Liberar memória da matriz
-if (matriz) {
-    for (int i = 0; i < linhas; i++) { 
-        free(matriz[i]);
+    // Liberta a memória alocada para a matriz
+    while (matriz) {
+        CelulaMatriz* temp = matriz;
+        matriz = matriz->prox;
+        free(temp);
     }
-    free(matriz);
-}
 
+    // Liberta a memória alocada para a lista de antenas
+    while (listaAntenas) {
+        Antena* temp = listaAntenas;
+        listaAntenas = listaAntenas->proximo;
+        free(temp);
+    }
+
+    return 0;
 }
