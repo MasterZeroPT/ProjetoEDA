@@ -17,3 +17,4 @@ ResultadoRemocao RemoverAntena(Antena* lista, CelulaMatriz* matriz, int linha, i
 Antena* AtualizarListaAntenas(CelulaMatriz* matriz);
 void ImprimirMatriz(CelulaMatriz* matriz);
 CelulaMatriz* AdicionarCelula(CelulaMatriz* matriz, int linha, int coluna, char valor);
+CelulaMatriz* InserirEfeitoNefasto(CelulaMatriz* matriz);

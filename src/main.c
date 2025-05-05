@@ -14,19 +14,19 @@
 
 int main() {
     // LerInput devolve a matriz e antenas juntas
-    MatrizAntenas resultado = LerInput("./src/exemplo.txt");
+    MatrizAntenas resultado = LerInput("./src/input.txt");
     CelulaMatriz* matriz = resultado.matriz;
     Antena* listaAntenas = resultado.antenas;
 
     // InserirAntena devolve a nova lista
-    listaAntenas = InserirAntena(listaAntenas, 'A', 0, 0);
-    matriz = AdicionarCelula(matriz, 0, 0, 'A');  // Atualiza a matriz separadamente
+    //listaAntenas = InserirAntena(listaAntenas, 'A', 0, 0);
+    //matriz = AdicionarCelula(matriz, 0, 0, 'A');  // Atualiza a matriz separadamente
 
-    listaAntenas = InserirAntena(listaAntenas, 'B', 1, 2);
-    matriz = AdicionarCelula(matriz, 1, 2, 'B');
+    //listaAntenas = InserirAntena(listaAntenas, 'B', 1, 2);
+    //matriz = AdicionarCelula(matriz, 1, 2, 'B');
 
-    listaAntenas = InserirAntena(listaAntenas, 'C', 2, 4);
-    matriz = AdicionarCelula(matriz, 2, 4, 'C');
+    //listaAntenas = InserirAntena(listaAntenas, 'C', 2, 4);
+    //matriz = AdicionarCelula(matriz, 2, 4, 'C');
 
     // RemoverAntena devolve a lista e matriz atualizadas
     ResultadoRemocao res = RemoverAntena(listaAntenas, matriz, 0, 0);
