@@ -46,7 +46,6 @@ int main() {
     // Cria a lista de adjacências para as antenas com a mesma frequência
     CriarListaAdjacencias(grafos);
 
-    // Exemplo de iteração sobre o grafo com a lista de adjacências
     for (GrafoAntenas* g = grafos; g; g = g->proximo) {
         printf("Frequência: %c\n", g->frequencia);
         for (NoGrafo* n = g->listaAdjacencia; n; n = n->proximo) {

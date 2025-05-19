@@ -27,22 +27,22 @@ NoGrafo* AdicionarNo(NoGrafo* lista, Coordenada localizacao) {
 
 // Função para criar o grafo das antenas com a mesma frequência
 GrafoAntenas* CriarGrafoAntenas(CelulaMatriz* matriz) {
-    GrafoAntenas* grafos = NULL;
+    GrafoAntenas* grafos = NULL; // Inicializa o grafo
 
     // Percorre a matriz para encontrar antenas
-    for (CelulaMatriz* cursor1 = matriz; cursor1; cursor1 = cursor1->prox) {
+    for (CelulaMatriz* cursor1 = matriz; cursor1; cursor1 = cursor1->prox) { // ";cursor1;" = cursor1 != NULL
         if (cursor1->valor == '.' || cursor1->valor == '#') continue; //Ignora células vazias ou com efeito nefasto
 
         // Verifica se já existe um grafo para a frequência
         GrafoAntenas* grafoAtual = grafos;
-        while (grafoAtual && grafoAtual->frequencia != cursor1->valor) {
+        while (grafoAtual && grafoAtual->frequencia != cursor1->valor) { // grafoAtual != NULL && grafoAtual->frequencia != cursor1->valor
             grafoAtual = grafoAtual->proximo;
         }
 
         // Se não existir, cria um novo grafo para a frequência
         if (!grafoAtual) {
             GrafoAntenas* novoGrafo = malloc(sizeof(GrafoAntenas));
-            if (!novoGrafo) return NULL;
+            if (!novoGrafo) return NULL; // !novografo = malloc falhou
             novoGrafo->frequencia = cursor1->valor;
             novoGrafo->listaAdjacencia = NULL;
             novoGrafo->proximo = grafos;
@@ -66,13 +66,13 @@ double CalcularDistancia(Coordenada a, Coordenada b) {
 int CriarListaAdjacencias(GrafoAntenas* grafos) {
     if (!grafos) return -1;
     for (GrafoAntenas* grafoAtual = grafos; grafoAtual; grafoAtual = grafoAtual->proximo) {
-        for (NoGrafo* no1 = grafoAtual->listaAdjacencia; no1; no1 = no1->proximo) {
+        for (NoGrafo* no1 = grafoAtual->listaAdjacencia; no1; no1 = no1->proximo) { // no1 significa "nó nº1" 
             no1->adjacentes = NULL; // Limpa a lista de adjacentes antes de preencher
             for (NoGrafo* no2 = grafoAtual->listaAdjacencia; no2; no2 = no2->proximo) {
                 if (no1 != no2) {
                     double distancia = CalcularDistancia(no1->localizacao, no2->localizacao);
                     if (distancia <= 50.0) { //Altere aqui o valor do limite de distância
-                        NoGrafo* novoAdj = malloc(sizeof(NoGrafo));
+                        NoGrafo* novoAdj = malloc(sizeof(NoGrafo)); 
                         if (!novoAdj) continue;
                         novoAdj->localizacao = no2->localizacao;
                         novoAdj->proximo = no1->adjacentes;
@@ -95,13 +95,13 @@ bool jaVisitado(Coordenada* visitados, int n, Coordenada c) {
 }
 
 // DFS recursivo
-void DFS_Rec(NoGrafo* no, Coordenada* visitados, int* nVisitados) {
-    if (!no || jaVisitado(visitados, *nVisitados, no->localizacao)) return;
-    visitados[*nVisitados] = no->localizacao;
+void DFS_Rec(NoGrafo* no, Coordenada* visitados, int* nVisitados) { // nVisitados é um ponteiro para o número de visitados
+    if (!no || jaVisitado(visitados, *nVisitados, no->localizacao)) return; // Se o nó é nulo ou já foi visitado, retorna
+    visitados[*nVisitados] = no->localizacao; // Marca como visitado
     (*nVisitados)++;
     printf("Antena alcançada (DFS) em (%d, %d)\n", no->localizacao.linha, no->localizacao.coluna);
     for (NoGrafo* adj = no->adjacentes; adj; adj = adj->proximo) {
-        DFS_Rec(adj, visitados, nVisitados);
+        DFS_Rec(adj, visitados, nVisitados); 
     }
 }
 
@@ -109,23 +109,21 @@ void DFS_Rec(NoGrafo* no, Coordenada* visitados, int* nVisitados) {
 bool DFS_Antena(GrafoAntenas* grafos, char frequencia, Coordenada origem) {
     // Encontra o grafo da frequência
     GrafoAntenas* g = grafos;
-    while (g && g->frequencia != frequencia) g = g->proximo;
-    if (!g) {
-        printf("Frequência não encontrada.\n");
+    while (g && g->frequencia != frequencia) g = g->proximo; 
+    if (!g) { // Frequência não encontrada
         return false;
     }
     // Encontra o nó de origem
     NoGrafo* no = g->listaAdjacencia;
     while (no && !(no->localizacao.linha == origem.linha && no->localizacao.coluna == origem.coluna))
         no = no->proximo;
-    if (!no) {
-        printf("Antena de origem não encontrada.\n");
+    if (!no) { // Antena de origem não encontrada
         return false;
     }
-    // Array para marcar visitados (tamanho máximo 100, ajuste se necessário)
+    // Array para marcar visitados (tamanho máximo ajustável se necessário)
     Coordenada visitados[30];
     int nVisitados = 0;
-    DFS_Rec(no, visitados, &nVisitados);
+    DFS_Rec(no, visitados, &nVisitados); 
 
     return true;
 }
@@ -135,28 +133,26 @@ bool DFS_Antena(GrafoAntenas* grafos, char frequencia, Coordenada origem) {
 bool BFS_Antena(GrafoAntenas* grafos, char frequencia, Coordenada origem) {
     // Encontra o grafo da frequência
     GrafoAntenas* g = grafos;
-    while (g && g->frequencia != frequencia) g = g->proximo;
-    if (!g) {
-        printf("Frequência não encontrada.\n");
+    while (g && g->frequencia != frequencia) g = g->proximo; 
+    if (!g) { // Frequência não encontrada
         return false;
     }
     // Encontra o nó de origem
     NoGrafo* no = g->listaAdjacencia;
     while (no && !(no->localizacao.linha == origem.linha && no->localizacao.coluna == origem.coluna))
         no = no->proximo;
-    if (!no) {
-        printf("Antena de origem não encontrada.\n");
+    if (!no) { // Antena de origem não encontrada
         return false;
     }
 
-    // BFS setup
+    // Inicializa a fila para BFS
     NoGrafo* fila[100]; // Tamanho máximo da fila
-    int inicio = 0, fim = 0;
+    int inicio = 0, fim = 0; // Índices para o início e fim da fila
     Coordenada visitados[100];
     int nVisitados = 0;
 
-    fila[fim++] = no;
-    visitados[nVisitados++] = no->localizacao;
+    fila[fim++] = no; // Adiciona o nó de origem à fila
+    visitados[nVisitados++] = no->localizacao; 
 
     while (inicio < fim) {
         NoGrafo* atual = fila[inicio++];
@@ -196,7 +192,7 @@ int ListarCaminhosRec(NoGrafo* atual, Coordenada destino, Coordenada* caminho, i
         *encontrou = 1;
         printf("Caminho: ");
         for (int i = 0; i < profundidade; i++) {
-            printf("(%d,%d)%s", caminho[i].linha, caminho[i].coluna, (i == profundidade-1) ? "" : " -> ");
+            printf("(%d,%d)%s", caminho[i].linha, caminho[i].coluna, (i == profundidade-1) ? "" : " -> "); 
         }
         printf("\n");
         return 1;
@@ -243,16 +239,14 @@ int ListarTodosCaminhos(GrafoAntenas* grafos, char frequencia, Coordenada origem
     // Encontra o grafo da frequência
     GrafoAntenas* g = grafos;
     while (g && g->frequencia != frequencia) g = g->proximo;
-    if (!g) {
-        printf("Frequência não encontrada.\n");
+    if (!g) { // Frequência não encontrada
         return 0;
     }
     // Encontra o nó de origem
     NoGrafo* noOrigem = g->listaAdjacencia;
     while (noOrigem && !(noOrigem->localizacao.linha == origem.linha && noOrigem->localizacao.coluna == origem.coluna))
         noOrigem = noOrigem->proximo;
-    if (!noOrigem) {
-        printf("Antena de origem não encontrada.\n");
+    if (!noOrigem) { // Antena de origem não encontrada
         return 0;
     }
     // Prepara arrays auxiliares
@@ -267,7 +261,7 @@ int ListarTodosCaminhos(GrafoAntenas* grafos, char frequencia, Coordenada origem
 }
 
 // A função retorna o número de pares de antenas listados
-int ListarInterseccoesAntenas(GrafoAntenas* grafos) {
+int ListarInterseccoesAntenas(GrafoAntenas* grafos) { // Provavelmente devia ser chamado ListarParesAntenas
     int total = 0;
     for (GrafoAntenas* g1 = grafos; g1; g1 = g1->proximo) {
         for (GrafoAntenas* g2 = grafos; g2; g2 = g2->proximo) {
@@ -294,7 +288,7 @@ bool SegsIntersetam(Coordenada a1, Coordenada a2, Coordenada b1, Coordenada b2, 
     int d = (a2.linha - a1.linha) * (b2.coluna - b1.coluna) - (a2.coluna - a1.coluna) * (b2.linha - b1.linha);
     if (d == 0) return false; // Paralelos
 
-    double t = ((b1.linha - a1.linha) * (b2.coluna - b1.coluna) - (b1.coluna - a1.coluna) * (b2.linha - b1.linha)) / (double)d;
+    double t = ((b1.linha - a1.linha) * (b2.coluna - b1.coluna) - (b1.coluna - a1.coluna) * (b2.linha - b1.linha)) / (double)d; // Esta fórmula calcula o ponto de interseção
     double u = ((b1.linha - a1.linha) * (a2.coluna - a1.coluna) - (b1.coluna - a1.coluna) * (a2.linha - a1.linha)) / (double)d;
 
     if (t >= 0 && t <= 1 && u >= 0 && u <= 1) {
