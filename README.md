@@ -13,10 +13,14 @@ ProjetoEDA/
 │   ├── funcao.h
 │   ├── struct.h
 │   ├── main.c
+|   ├── grafos.c
+|   ├── grafos.h
 ├── build/
 │   ├── funcao.o
+│   ├── grafos.o
 │   ├── main.o
 │   ├── libfuncao.a
+│   ├── libgrafos.a
 ├── makefile
 ├── doxygen/
 └── README.md
